@@ -2,7 +2,7 @@
 
 Course objective: to acquire a sufficient foundation in R to manipulate data frames, visualize data, and perform statistical tests.
 
-Each module has a slideshow (`.pptx`), an R script with the lesson and the exercises, and an R script with the solutions (`_exercise.R`).
+Each module has an R script with the lesson and the exercises, and an R script with the solutions (`_exercise.R`).
 
 ## Module I — Introduction to R
 
@@ -84,6 +84,58 @@ Data cleaning (module I) and statistical analysis (module II) of clinical data.
 | `microbiome_data.RData`, `metabolites.csv` | Gut microbiota at genus level (CLR-transformed) and metabolic measurements of 35 samples in diet groups | Made-up example data |
 | `protein.expression.csv` | Small example table of protein expression | Made-up example data |
 
+### Variables of the clinical datasets
+
+**`stenting.sav`** (stroke patients treated with mechanical thrombectomy). Variables whose name starts with `Codi` hold the code of the next variable (for example, `CodiSexe` and `Sexe`).
+
+| Variable | Description |
+|---|---|
+| `IdPacient` | Patient identifier |
+| `Datadenaixement` | Date of birth |
+| `CodiSexe`, `Sexe` | Sex: 1 = man (*Home*), 2 = woman (*Dona*) |
+| `EscalaRACE` | RACE scale (0–9): prehospital scale of stroke severity that predicts a large vessel occlusion |
+| `CodiIctusdespertariniciincert`, `Ictusdespertariniciincert` | Wake-up stroke or unknown time of onset (1 = yes, 0 = no) |
+| `Edat` | Age (years) |
+| `NIHSSinicial` | NIHSS score at admission (0–42): neurological deficit, higher is more severe |
+| `ASPECTSscore` | ASPECTS score (0–10): early ischaemic changes in the CT scan, lower is a larger infarct |
+| `tPAsino` | Intravenous thrombolysis with tPA (1 = yes, 0 = no) |
+| `ACIT` | Occlusion of the terminal internal carotid artery (*Si*/*No*) |
+| `CodiACMM1`, `ACMM1` | Occlusion of the M1 segment of the middle cerebral artery (1 = yes, 0 = no) |
+| `CodiACMM2`, `ACMM2` | Occlusion of the M2 segment of the middle cerebral artery (1 = yes, 0 = no) |
+| `CodiAB`, `AB` | Occlusion of the basilar artery (1 = yes, 0 = no) |
+| `STENTINTRAsino` | Intracranial stent during the thrombectomy (1 = yes, 0 = no) |
+| `CodiHipertensió` | Hypertension (1 = yes, 0 = no) |
+| `CodiFibril.lacióauricular` | Atrial fibrillation (1 = yes, 0 = no) |
+| `mRSDIC` | Modified Rankin Scale at discharge (0 = no symptoms, 6 = death) |
+| `NIHSS24h` | NIHSS score 24 hours after the thrombectomy |
+| `mRS3mesos` | Modified Rankin Scale at 3 months |
+| `Exitus3mesos` | Death at 3 months (1 = yes, 0 = no) |
+
+**`hematoma.xlsx`** and **`caso_control.xlsx`** (women who underwent hysterectomy). `caso_control.xlsx` has the same patients with some variables renamed in Catalan and four more variables.
+
+| Variable (`hematoma.xlsx` / `caso_control.xlsx`) | Description |
+|---|---|
+| `Pacient` | Patient number |
+| `Hematoma` | Post-surgical hematoma (1 = yes, 0 = no): the outcome |
+| `Tipus H` | Type of hysterectomy (*Simple*, *Radical*) |
+| `Via robótica` | Robotic surgery (*Sí*/*No*) |
+| `Edat` | Age (years) |
+| `Peso` / `Pes` | Weight (kg) |
+| `BMI` | Body mass index (kg/m²) |
+| `Hemograma` / `Hemograma pre iq` | Haemoglobin before surgery (g/dL) |
+| `Tabaco` / `Hábit tabàquic` | Smoking (1 = yes, 0 = no) |
+| `Diabetes` | Diabetes (1 = yes, 0 = no) |
+| `Inmuno` / `Tto inmunosupresor` | Immunosuppressive treatment (1 = yes, 0 = no) |
+| `Charlson` | Charlson comorbidity index |
+| `Intubacion` / `Intubación` | Difficult intubation (1 = yes, 0 = no) |
+| `Tiempo cirugia` / `Temps quirúrgic` | Duration of the surgery (minutes) |
+| `Material sutura` | Suture material (*Barbada*, *Monofilamento*, *Multifilamento*) |
+| `Dias Hospitalizacion` / `Temps hospitalització (dies)` | Hospital stay (days) |
+| `Paritat` (only `caso_control.xlsx`) | Number of births (0–4) |
+| `Indicació oncológica` (only `caso_control.xlsx`) | Surgery for cancer (1 = yes, 0 = no) |
+| `Pes Peça` (only `caso_control.xlsx`) | Weight of the removed uterus (g) |
+| `Mobilitzador` (only `caso_control.xlsx`) | Use of a uterine manipulator (1 = yes, 0 = no) |
+
 ## Requirements and usage
 
 R (≥ 4.1) and RStudio. Each script installs or loads the packages it uses; the main ones are readxl, haven, dplyr, ggplot2, summarytools, car, FSA, GGally, DataExplorer, tableone, compareGroups, FactoMineR and factoextra.
@@ -98,6 +150,6 @@ If you use or adapt these materials, please credit them as:
 
 ## License
 
-The course materials (slides, scripts and synthetic data) are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/): you can share and adapt them, also commercially, as long as you give appropriate credit (see *How to cite*), link to the license and indicate if changes were made. See [LICENSE](LICENSE).
+The course materials (scripts and synthetic data) are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/): you can share and adapt them, also commercially, as long as you give appropriate credit (see *How to cite*), link to the license and indicate if changes were made. See [LICENSE](LICENSE).
 
 The third-party datasets listed in *Data* (Pallant, Kaggle and *airway*) keep the terms of their original sources.

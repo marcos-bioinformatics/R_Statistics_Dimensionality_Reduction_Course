@@ -285,7 +285,7 @@ boxplot(age ~ sex, data = error,
 ## patients treated with mechanical thrombectomy, with (STENTINTRAsino = 1) or
 ## without (STENTINTRAsino = 0) intracranial stenting. The data are SYNTHETIC
 ## (Data/generate_synthetic_data.R): they do not belong to real patients.
-## The variables are detailed in the slideshows.
+## The variables are described in the README.
 
 # Load the dataframe from .sav file
 
@@ -360,7 +360,7 @@ boxplot(age ~ sex, data = error,
 ## patients treated with mechanical thrombectomy, with (STENTINTRAsino = 1) or
 ## without (STENTINTRAsino = 0) intracranial stenting. The data are SYNTHETIC
 ## (Data/generate_synthetic_data.R): they do not belong to real patients.
-## The variables are detailed in the slideshows.
+## The variables are described in the README.
 
 # Load the dataframe from .sav file
 stent <- read_sav("____")
